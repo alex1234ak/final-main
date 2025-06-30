@@ -1,9 +1,9 @@
-name: golang-pipeline
+name: parcel-tracker
 on: push
 jobs:
   test:
     runs-on: ubuntu-latest
-    container: golang:1.24.3
+    container: golang:1.23
     steps:
       - uses: actions/checkout@v4
 
@@ -36,7 +36,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5.5.1
         with:
-          images: <Docker ID>/hello-golang
+          images: alex1234ak/workflow_parcel
 
       - name: Build and push Docker Image
         uses: docker/build-push-action@v5
